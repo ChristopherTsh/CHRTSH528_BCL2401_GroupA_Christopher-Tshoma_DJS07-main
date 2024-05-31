@@ -1,22 +1,19 @@
 import React from "react"
-import memesData from "../memesData.js"
+import memesData from "./memesData.jsx"
 
 
 export default function Meme() {
-    
+    const [memeImage, setMemeImage] = React.useState("")
 
-    let url
     
     function getMemeImage() {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        url = memesArray[randomNumber].url
-        console.log(url)
+        setMemeImage(memesArray[randomNumber].url)
     }
 
     return (
         <main>
-             <p>{url}</p>
             <div className="form">
             <input
                     type="text"
@@ -36,6 +33,7 @@ export default function Meme() {
                     Get a new meme image 🖼
                 </button>
             </div>
+            <img src={memeImage} className="meme--image" />
         </main>
     )
 }

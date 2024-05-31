@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "./components/Header"
-import Meme from "./components/Meme"
-function App() {
+import Meme from "./Meme"
+export default function App() {
 
   return (
     <div>
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-// export default App
+
