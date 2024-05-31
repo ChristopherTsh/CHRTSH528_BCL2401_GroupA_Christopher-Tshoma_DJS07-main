@@ -1,12 +1,12 @@
 import React from "react"
+// import memesData from "../memesData.js"
+
 
 export default function Meme() {
     return (
         <main>
-            <form className="form">
-            <div>
-                    <label htmlFor="top-text">Top Text</label>
-                <input 
+            <div className="form">
+            <input
                     type="text"
                     placeholder="Top text"
                     className="form--input"
@@ -16,22 +16,13 @@ export default function Meme() {
                     placeholder="Bottom text"
                     className="form--input"
                 />
-                </div>
-                <div>
-                <label>Bottom Text
-                    <input
-                            type="text"
-                            placeholder="and take my money"
-                            className="form--input"
-                        />
-                    </label>
-                </div>
+    
                 <button 
                     className="form--button"
                 >
                     Get a new meme image 🖼
                 </button>
-            </form>
+            </div>
         </main>
     )
 }
