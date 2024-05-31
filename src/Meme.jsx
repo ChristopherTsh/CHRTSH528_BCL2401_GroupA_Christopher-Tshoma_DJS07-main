@@ -1,6 +1,6 @@
 import React from "react"
 
-
+// Exporting a functional component called Meme
 export default function Meme() {
     const [meme, setMeme] = React.useState({
         topText: "",
@@ -9,6 +9,8 @@ export default function Meme() {
     })
     const [allMemes, setAllMemes] = React.useState([])
 
+    // Using React's useEffect hook to fetch meme data from the imgflip API
+    // This effect runs only once when the component mounts
     React.useEffect(() => {
         async function getMemes(){
             const res = await fetch("https://api.imgflip.com/get_memes")
@@ -18,6 +20,7 @@ export default function Meme() {
     getMemes()
     }, [])
     
+    // Function to handle input changes and update the 'meme' state object
     function getMemeImage() {
         const randomNumber = Math.floor(Math.random() * allMemes.length)
         const url = allMemes[randomNumber].url
@@ -35,6 +38,7 @@ export default function Meme() {
         }))
     }
 
+    // Returning the JSX content to be rendered
     return (
         <main>
             <div className="form">
